@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Counter-Strike 2</h1>
+    <img src="images.webp" width="300px" alt="картинка" />
+    <hr />
+    <h1>Описание игры</h1>
+    <p>
+      Counter-Strike (CS) — это культовый многопользовательский тактический
+      шутер от первого лица, ставший эталоном киберспортивных дисциплин.
+    </p>
+    <h1>Жанр</h1>
+    <p>
+      Counter-Strike относится к жанру тактических командных шутеров от первого
+      лица (Tactical FPS). В отличие от «аркадных» шутеров (типа Call of Duty),
+      здесь критически важны планирование, экономика, контроль отдачи оружия и
+      командное взаимодействие.
+    </p>
+    <h1>Когда играл</h1>
+    <p>Очень давно</p>
+    <h1>почему нравится</h1>
+    <p>Любли стрелялки</p>
+
+    <hr />
+    <h1>Таблица</h1>
+    <table border="1">
+      <tr>
+        <th>Компонент</th>
+        <th>Требование</th>
+      </tr>
+
+      <tr>
+        <td>Процессор</td>
+        <td>intel-5</td>
+      </tr>
+
+      <tr>
+        <td>ОЗУ</td>
+        <td>16 gb</td>
+      </tr>
+
+      <tr>
+        <td>Видеокарта</td>
+        <td>RTX 3060</td>
+      </tr>
+    </table>
+
+    <h1>Любимые режимы или персонажи</h1>
+    <ul>
+      <li>Соревновательный</li>
+      <li>Напарники</li>
+    </ul>
+
+    <h1>Форма оценки игры</h1>
+    <form>
+      <label>Имя</label>
+      <input type="text" />
+      <hr />
+      <h2>оценки</h2>
+
+      <select>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+      </select>
+
+      <h2>Написать отзыв:</h2>
+      <textarea></textarea><br />
+
+      <button type="submit">Отправить</button>
+    </form>
+    <a href="https://www.counter-strike.net"> Официальный сайт </a>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+h1 {
+  color: yellow;
+  text-align: center;
+  font-size: 50px;
+}
+
+body {
+  background-color: rgb(56, 146, 171);
+}
+
+p {
+  color: whitesmoke;
+  font-size: 25px;
+  border: 2px solid black;
+  padding: 20px;
+}
+
+img {
+  width: 300px;
+  border: 5px solid black;
+  border-radius: 40px;
+  margin: 20px;
+  box-shadow: 5px 5px 10px red;
+}
+
