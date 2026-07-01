@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1 class="title">Counter-Strike 2</h1>
+
+    <p class="description">Это моя любимая игра.</p>
+
+    <img class="photo" src="images.webp" alt="CS2" />
+
+    <p>Этот текст не должен измениться.</p>
+  </body>
+</html>
+
+
+
+
+.title {
+  text-align: center;
+  color: red;
+}
+.description {
+  color: black;
+  padding: 20px;
+  border: 2px solid black;
+}
+
+.photo {
+  width: 300px;
+  border: 5px solid black;
+  border-radius: 40px;
+  box-shadow: 5px 5px 10px red;
+}
