@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Моя игровая коллекция</h1>
+
+    <div class="container">
+      <div class="card">
+        <img
+          class="img"
+          src="Counter-strike_2.jpg"
+          width="200px"
+          alt="Counter-Strike 2"
+        />
+        <h2>Counter-Strike 2</h2>
+        <p>75$</p>
+        <button class="button" type="button">Купить</button>
+      </div>
+
+      <div class="card">
+        <img
+          class="img"
+          src="Homepage_Discover-our-games_MC-Vanilla-KeyArt_864x864.jpg"
+          width="200px"
+          alt="Minecraft"
+        />
+        <h2>Minecraft</h2>
+        <p>30$</p>
+        <button class="button" type="button">Купить</button>
+      </div>
+
+      <div class="card">
+        <img class="img" src="GTA5.jfif" width="200px" alt="GTA V" />
+        <h2>GTA V</h2>
+        <p>55$</p>
+        <button class="button" type="button">Купить</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  h1 {
+  text-align: center;
+  color: yellow;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 200px;
+}
+
+.card {
+  border: 2px solid rgb(255, 221, 0);
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+}
+p {
+  color: yellow;
+  text-align: center;
+}
+h2 {
+  color: yellow;
+  text-align: center;
+}
+body {
+  background-color: rgb(48, 42, 42);
+}
+
+.button {
+  padding: 10px;
+  margin: 70px;
+  background-color: yellow;
+  border-radius: 20px;
+}
+button:hover {
+  background-color: rgb(231, 231, 116);
+  box-shadow: 0px 0px 20px rgb(214, 120, 37);
+}
+.img {
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px pink;
+}
