@@ -1,0 +1,147 @@
+📖 Конспект (Flexbox + CSS)
+1. display: flex;
+
+Что делает?
+
+Располагает дочерние элементы в один ряд.
+
+.container {
+    display: flex;
+}
+2. gap
+
+Что делает?
+
+Создаёт расстояние между элементами внутри Flexbox.
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+3. justify-content
+
+Что делает?
+
+Располагает элементы по горизонтали.
+
+Самые полезные значения:
+
+justify-content: flex-start;
+
+⬅️ Слева (по умолчанию)
+
+justify-content: center;
+
+⬅️➡️ По центру
+
+justify-content: flex-end;
+
+➡️ Справа
+
+justify-content: space-between;
+
+⬅️ ⬅️➡️ ➡️
+
+Первый слева, последний справа.
+
+justify-content: space-evenly;
+
+⬅️ одинаковые расстояния между всеми элементами.
+
+4. align-items
+
+Что делает?
+
+Располагает элементы по вертикали.
+
+Самые полезные значения:
+
+align-items: flex-start;
+
+⬆️ Сверху
+
+align-items: center;
+
+По центру
+
+align-items: flex-end;
+
+⬇️ Снизу
+
+📌 Что нужно помнить
+
+Flexbox работает только на родителе.
+
+Например:
+
+<div class="container">
+
+    <div class="card"></div>
+
+    <div class="card"></div>
+
+    <div class="card"></div>
+
+</div>
+
+Здесь:
+
+.container ← Родитель
+
+.card ← Дочерние элементы
+
+Поэтому именно .container получает:
+
+display: flex;
+📚 Всё CSS, которое ты уже знаешь
+color
+
+Изменяет цвет текста.
+
+background-color
+
+Меняет цвет фона.
+
+width
+
+Ширина элемента.
+
+border
+
+Создаёт рамку.
+
+border-radius
+
+Закругляет углы.
+
+padding
+
+Внутренний отступ.
+
+margin
+
+Внешний отступ.
+
+box-shadow
+
+Добавляет тень.
+
+display: flex
+
+Ставит дочерние элементы в ряд.
+
+gap
+
+Расстояние между элементами.
+
+justify-content
+
+Расположение элементов по горизонтали.
+
+align-items
+
+Расположение элементов по вертикали.
+
+:hover
+
+Изменяет стиль при наведении мыши.
