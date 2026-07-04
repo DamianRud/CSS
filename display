@@ -1,0 +1,62 @@
+display
+
+block
+- с новой строки
+- занимает всю ширину
+- width и height работают
+
+inline
+- в одну строку
+- width и height не работают
+
+inline-block
+- в одну строку
+- width и height работают
+
+
+
+  <!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <h1>Заголовок</h1>
+    <!-- 
+    <a href="#">Steam</a>
+    <a href="#">Epic Games</a>
+    <a href="#">Origin</a> -->
+
+    <!-- <h1>Первый</h1>
+    <h1>Второй</h1>
+    <h1>Третий</h1> -->
+
+    <a class="btn" href="#">Купить</a>
+    <a class="btn" href="#">Подробнее</a>
+  </body>
+</html>
+
+
+
+
+
+
+  /* a {
+  display: block;
+} */
+
+/* h1 {
+  display: inline;
+} */
+
+.btn {
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  background-color: green;
+  color: white;
+  text-align: center;
+}
