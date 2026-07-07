@@ -12,3 +12,8 @@ flex-wrap: nowrap;
 
 
 text-decoration: none; — убирает подчёркивание у ссылок.
+
+
+text-shadow
+
+Оно делает тень именно у текста.
