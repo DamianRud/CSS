@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+
+  <body>
+    <div class="navbar">
+      <h1 class="title">🎧 HeadShop</h1>
+
+      <div class="menu">
+        <a href="#">Главная</a>
+        <a href="#">Каталог</a>
+        <a href="#">Контакты</a>
+      </div>
+    </div>
+
+    <div class="conteiner">
+      <div class="card">
+        <img class="img" src="airpod.png.jfif" alt="airpod" />
+        <h2>AirPods</h2>
+        <p>75$</p>
+        <button class="button" type="button">Купить</button>
+      </div>
+
+      <div class="card">
+        <img class="img" src="llllll.jfif" alt="nausniki" />
+        <h2>Наушники Xiaomi</h2>
+        <p>30$</p>
+        <button class="button" type="button">Купить</button>
+      </div>
+
+      <div class="card">
+        <img class="img" src="jb.jfif" alt="jb" />
+        <h2>Наушники JB</h2>
+        <p>55$</p>
+        <button class="button" type="button">Купить</button>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.title {
+  text-align: center;
+}
+body {
+  background-color: rgba(7, 71, 94, 0.473);
+}
+.menu a {
+  text-decoration: none;
+  color: bisque;
+
+  transition: 0.3s;
+}
+.menu {
+  display: flex;
+  gap: 30px;
+}
+
+.menu a:hover {
+  color: aqua;
+}
+
+.img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50px;
+  box-shadow: 5px 5px 5px aqua;
+}
+h2 {
+  color: rgb(85, 102, 131);
+  text-align: center;
+}
+
+p {
+  color: rgb(85, 102, 131);
+  text-align: center;
+}
+
+.button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px;
+  color: rgb(94, 137, 137);
+  background-color: rgb(85, 102, 131);
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px aqua;
+  transition: 0.5s;
+}
+
+.button:hover {
+  color: beige;
+  background-color: rgb(203, 208, 217);
+}
+.card {
+  border: 2px solid rgb(136, 178, 215);
+  background-color: rgb(136, 178, 215);
+  border-radius: 50px;
+}
+.card:hover {
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+.conteiner {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: rgb(30, 40, 55);
+}
