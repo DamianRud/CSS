@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <h2 class="logo">🎮 GameStore</h2>
+
+      <div class="menu">
+        <a href="#">Главная</a>
+        <a href="#">Игры</a>
+        <a href="#">Контакты</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="card">
+        <img class="img" src="Counter-strike_2.jpg" alt="Counter-Strike 2" />
+        <h2>Counter-Strike 2</h2>
+        <p>75$</p>
+        <button class="button" type="button">Купить</button>
+      </div>
+
+      <div class="card">
+        <img
+          class="img"
+          src="Homepage_Discover-our-games_MC-Vanilla-KeyArt_864x864.jpg"
+          alt="Minecraft"
+        />
+        <h2>Minecraft</h2>
+        <p>30$</p>
+        <button class="button" type="button">Купить</button>
+      </div>
+
+      <div class="card">
+        <img class="img" src="GTA5.jfif" alt="GTA V" />
+        <h2>GTA V</h2>
+        <p>55$</p>
+        <button class="button" type="button">Купить</button>
+      </div>
+    </div>
+    <div class="footer">
+      <p>© 2025 GameStore</p>
+
+      <div class="menuFooter">
+        <a href="#">Контакты</a>
+        <a href="#">Telegram</a>
+        <a href="#">GitHub</a>
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+h1 {
+  text-align: center;
+  color: rgb(255, 255, 0);
+}
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 2px solid rgb(255, 221, 0);
+  border-radius: 20px;
+  background-color: rgb(0, 0, 0);
+  transition: 1s;
+  width: 205px;
+  padding: 10px;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  background-color: aqua;
+}
+p {
+  color: yellow;
+  text-align: center;
+}
+h2 {
+  color: yellow;
+  text-align: center;
+}
+body {
+  background-color: rgb(48, 42, 42);
+}
+
+.button {
+  padding: 10px;
+  margin: 70px;
+  background-color: yellow;
+  border-radius: 20px;
+}
+button:hover {
+  background-color: rgb(231, 231, 116);
+  box-shadow: 0px 0px 20px rgb(214, 120, 37);
+  transform: scale(1.1);
+}
+.img {
+  border-radius: 15px;
+  box-shadow: 5px 5px 10px pink;
+  width: 200px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: black;
+}
+
+.menu {
+  display: flex;
+  gap: 20px;
+  color: yellow;
+  transition: 0.5s;
+}
+
+.logo {
+  color: yellow;
+  text-shadow: 0px 0px 10px yellow;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.menu a:hover {
+  color: yellow;
+}
+
+.menuFooter a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+  margin-top: 50px;
+}
