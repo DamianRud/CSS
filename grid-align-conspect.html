@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>justify-items / align-items — конспект</title>
+<style>
+  :root{
+    --blueprint: #0e2a47;
+    --blueprint-line: #1e4a73;
+    --paper: #eef3f7;
+    --ink: #0e2a47;
+    --accent: #ff8a3d;
+    --accent-soft: #ffd7b3;
+    --mono: 'JetBrains Mono', 'SFMono-Regular', Consolas, monospace;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--blueprint);
+    background-image:
+      linear-gradient(var(--blueprint-line) 1px, transparent 1px),
+      linear-gradient(90deg, var(--blueprint-line) 1px, transparent 1px);
+    background-size: 24px 24px;
+    font-family: var(--sans);
+    color: var(--paper);
+    padding: 40px 20px 80px;
+  }
+
+  .wrap { max-width: 780px; margin: 0 auto; }
+
+  header {
+    border-bottom: 2px dashed rgba(255,255,255,0.25);
+    padding-bottom: 24px;
+    margin-bottom: 40px;
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 10px;
+  }
+
+  h1 {
+    font-family: var(--mono);
+    font-size: clamp(28px, 5vw, 42px);
+    margin: 0 0 8px;
+    line-height: 1.1;
+    color: #fff;
+  }
+
+  h1 span { color: var(--accent); }
+
+  .sub {
+    color: rgba(255,255,255,0.6);
+    font-size: 15px;
+    margin: 0;
+    max-width: 60ch;
+  }
+
+  section.block {
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 4px;
+    padding: 28px 28px 8px;
+    margin-bottom: 36px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    position: relative;
+  }
+
+  section.block::before {
+    content: attr(data-axis);
+    position: absolute;
+    top: -14px;
+    left: 24px;
+    background: var(--accent);
+    color: #1a1200;
+    font-family: var(--mono);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    padding: 4px 10px;
+    border-radius: 3px;
+  }
+
+  .block h2 {
+    font-family: var(--mono);
+    font-size: 20px;
+    margin: 6px 0 4px;
+  }
+
+  .block p.desc {
+    margin: 0 0 20px;
+    color: #33465c;
+    font-size: 14.5px;
+  }
+
+  .controls {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+
+  button {
+    font-family: var(--mono);
+    font-size: 13px;
+    border: 1.5px solid var(--blueprint);
+    background: transparent;
+    color: var(--blueprint);
+    padding: 7px 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .15s ease;
+  }
+
+  button.active, button:hover {
+    background: var(--blueprint);
+    color: var(--paper);
+  }
+
+  .stage {
+    height: 160px;
+    background:
+      repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(14,42,71,0.06) 20px),
+      repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(14,42,71,0.06) 20px);
+    border: 1.5px solid #c3d0dc;
+    border-radius: 4px;
+    display: grid;
+    margin-bottom: 20px;
+    transition: all .25s ease;
+  }
+
+  .box {
+    width: 56px;
+    height: 56px;
+    background: var(--accent);
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    box-shadow: 0 4px 10px rgba(255,138,61,0.4);
+    transition: all .25s ease;
+  }
+
+  .snippet {
+    font-family: var(--mono);
+    font-size: 13.5px;
+    background: var(--blueprint);
+    color: var(--accent-soft);
+    padding: 12px 16px;
+    border-radius: 4px;
+    margin: 0 0 24px;
+    overflow-x: auto;
+  }
+
+  .snippet .prop { color: #7fd4ff; }
+  .snippet .val { color: var(--accent); }
+
+  .legend {
+    display: flex;
+    gap: 18px;
+    font-family: var(--mono);
+    font-size: 12px;
+    color: #33465c;
+    margin: -8px 0 24px;
+    flex-wrap: wrap;
+  }
+  .legend b { color: var(--ink); }
+
+  .summary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .summary .card {
+    background: var(--paper);
+    border: 1.5px solid rgba(255,255,255,0.15);
+    border-radius: 4px;
+    padding: 18px 20px;
+  }
+
+  .summary .card h3 {
+    font-family: var(--mono);
+    font-size: 14px;
+    margin: 0 0 10px;
+    color: var(--blueprint);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .summary .card ul {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 13.5px;
+    line-height: 1.7;
+    color: #33465c;
+  }
+
+  .summary .card code {
+    font-family: var(--mono);
+    background: rgba(14,42,71,0.08);
+    padding: 1px 5px;
+    border-radius: 3px;
+  }
+
+  footer {
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.35);
+    margin-top: 40px;
+  }
+
+  @media (max-width: 600px) {
+    .summary { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="eyebrow">CSS Grid · Шпаргалка</p>
+    <h1>Выравнивание в <span>Grid</span></h1>
+    <p class="sub">Два свойства, одна ось у каждого. Нажимай на кнопки — коробка двигается по своей чертёжной сетке в реальном времени.</p>
+  </header>
+
+  <!-- JUSTIFY-ITEMS -->
+  <section class="block" data-axis="ГОРИЗОНТАЛЬ">
+    <h2>justify-items</h2>
+    <p class="desc">Управляет положением элемента по горизонтали (вдоль строки).</p>
+
+    <div class="controls" id="jCtrls">
+      <button data-val="start" class="active">start</button>
+      <button data-val="center">center</button>
+      <button data-val="end">end</button>
+    </div>
+
+    <div class="stage" id="jStage" style="justify-items:start;">
+      <div class="box" id="jBox">⬅️</div>
+    </div>
+
+    <p class="snippet"><span class="prop">justify-items</span>: <span class="val" id="jVal">start</span>;</p>
+  </section>
+
+  <!-- ALIGN-ITEMS -->
+  <section class="block" data-axis="ВЕРТИКАЛЬ">
+    <h2>align-items</h2>
+    <p class="desc">Управляет положением элемента по вертикали (поперёк строки).</p>
+
+    <div class="controls" id="aCtrls">
+      <button data-val="start" class="active">start</button>
+      <button data-val="center">center</button>
+      <button data-val="end">end</button>
+    </div>
+
+    <div class="stage" id="aStage" style="align-items:start;">
+      <div class="box" id="aBox">⬆️</div>
+    </div>
+
+    <p class="snippet"><span class="prop">align-items</span>: <span class="val" id="aVal">start</span>;</p>
+  </section>
+
+  <div class="summary">
+    <div class="card">
+      <h3>⟷ justify-items</h3>
+      <ul>
+        <li><code>start</code> — слева</li>
+        <li><code>center</code> — по центру</li>
+        <li><code>end</code> — справа</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>↕ align-items</h3>
+      <ul>
+        <li><code>start</code> — сверху</li>
+        <li><code>center</code> — по центру</li>
+        <li><code>end</code> — снизу</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>display: grid — работает только внутри grid-контейнера</footer>
+</div>
+
+<script>
+  const emojiJ = { start: '⬅️', center: '🎯', end: '➡️' };
+  const emojiA = { start: '⬆️', center: '🎯', end: '⬇️' };
+
+  function wire(ctrlsId, stageId, boxId, valId, prop, emojiMap) {
+    const ctrls = document.getElementById(ctrlsId);
+    const stage = document.getElementById(stageId);
+    const box = document.getElementById(boxId);
+    const val = document.getElementById(valId);
+
+    ctrls.addEventListener('click', (e) => {
+      if (e.target.tagName !== 'BUTTON') return;
+      const v = e.target.dataset.val;
+      stage.style[prop] = v;
+      box.textContent = emojiMap[v];
+      val.textContent = v;
+      [...ctrls.children].forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+    });
+  }
+
+  wire('jCtrls', 'jStage', 'jBox', 'jVal', 'justifyItems', emojiJ);
+  wire('aCtrls', 'aStage', 'aBox', 'aVal', 'alignItems', emojiA);
+</script>
+</body>
+</html>
