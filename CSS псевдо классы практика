@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <button class="button">Нажми на меня</button>
+    <input type="text" placeholder="Введите имя" />
+
+    <div class="container">
+      <div class="card">1</div>
+      <div class="card">2</div>
+      <div class="card">3</div>
+      <div class="card">4</div>
+      <div class="card">5</div>
+      <div class="card">6</div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+
+.button {
+  background: green;
+  color: white;
+  padding: 10px;
+}
+
+.button:hover {
+  background: blue;
+}
+
+.button:active {
+  background: red;
+  transform: scale(0.95);
+}
+/* ---------------------- */
+input {
+  padding: 10px;
+  border: 2px solid gray;
+}
+
+input:focus {
+  border: 2px solid blue;
+  outline: none;
+}
+/* ---------------------------- */
+.card:nth-child(3) {
+  background: yellow;
+}
+.card:nth-child(even) {
+  background: rgb(242, 0, 255);
+}
+.card:nth-child(odd) {
+  background: rgb(0, 204, 255);
+}
+
+.card:first-child {
+  background: red;
+}
+
+.card:last-child {
+  background: rgb(0, 30, 255);
+}
